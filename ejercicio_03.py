@@ -1,12 +1,15 @@
 import pymysql
 import streamlit as st
+from dotenv import load_dotenv
+import os
 
-# Datos de conexión
+load_dotenv()
+
 config = {
     "host": "mysql-1acf5854-juanantoniolobillo-8121.e.aivencloud.com",
     "port": 19559,
     "user": "avnadmin",
-    "password": "AVNS_5mPcs7yPojZ3h6FiB8w",
+    "password": os.getenv("DB_PASSWORD"),
     "database": "defaultdb",
     "ssl": {"fake_flag_to_enable_ssl": True},
     "connect_timeout": 10
